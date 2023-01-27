@@ -4,7 +4,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SelenideTest2 {
+public class Selenide2Test {
 
     @Test
     public void gitHubSolutionTest(){
