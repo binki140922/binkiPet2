@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class DemoQaTest {
 
@@ -24,18 +23,19 @@ public class DemoQaTest {
     @BeforeAll
     public static void configurationTests(){
 
-        Configuration.baseUrl = "https://demoqa.com/";
-        //Проблемы с отображением сайта в хроме
-        Configuration.browserSize = "800x1080";
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920x1080";
     }
 
     @Test
     public void practiceFormTest(){
 
-        open("automation-practice-form");
+        open("/automation-practice-form");
         $(".main-header").parent().shouldBe(text("Practice Form"));
 
         //Act
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#close-fixedban').remove()");
         $("#firstName").setValue(FIRSTNAME);
         $("#lastName").setValue(LASTNAME);
         $("#userEmail").setValue(EMAIL);
@@ -49,10 +49,10 @@ public class DemoQaTest {
         $(byText(HOBBIES)).parent().click();
         $("#uploadPicture").uploadFromClasspath(FILE_PATCH);
         $("#currentAddress").setValue(CURRENT_ADDRESS);
-        $("#stateCity-wrapper #state").click();
-        $(byText(STATE)).click();
-        $("#stateCity-wrapper #city").click();
-        $(byText(CITY)).click();
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText(STATE)).click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText(CITY)).click();
         $(byText("Submit")).click();
 
         //Assert
