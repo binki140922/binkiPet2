@@ -39,7 +39,7 @@ public class DemoQaTest {
         $("#firstName").setValue(FIRSTNAME);
         $("#lastName").setValue(LASTNAME);
         $("#userEmail").setValue(EMAIL);
-        $("#gender-radio-1").parent().click();
+        $("#genterWrapper").$(byText("Male")).parent().click();
         $("#userNumber").setValue(MOBILE_NUMBER);
         $("#dateOfBirth>div").click();
         $(".react-datepicker .react-datepicker__year-select").selectOption("1900");
