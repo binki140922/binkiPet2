@@ -34,6 +34,7 @@ public class DemoQaTest {
         $(".main-header").parent().shouldBe(text("Practice Form"));
 
         //Act
+
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#close-fixedban').remove()");
         $("#firstName").setValue(FIRSTNAME);
