@@ -59,12 +59,16 @@ public class DataTest {
     }
 
     private String getRandomCity(String state) {
-        return switch (state) {
-            case "NCR" -> getRandomValue("Delhi", "Gurgaon", "Noida");
-            case "Uttar Pradesh" -> getRandomValue("Agra", "Lucknow", "Merrut");
-            case "Haryana" -> getRandomValue("Karnal", "Panipat");
-            case "Rajasthan" -> getRandomValue("Jaipur", "Jaiselmer");
-            default -> null;
-        };
+
+        String city = null;
+
+         switch (state) {
+            case "NCR" -> city = getRandomValue("Delhi", "Gurgaon", "Noida");
+            case "Uttar Pradesh" -> city = getRandomValue("Agra", "Lucknow", "Merrut");
+            case "Haryana" -> city = getRandomValue("Karnal", "Panipat");
+            case "Rajasthan" -> city = getRandomValue("Jaipur", "Jaiselmer");
+        }
+
+        return city;
     }
 }
