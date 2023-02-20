@@ -1,5 +1,6 @@
 package test;
 
+import io.qameta.allure.Allure;
 import org.junit.jupiter.api.Test;
 import settings.basetest.BaseTest;
 import settings.data.DataTest;
@@ -11,7 +12,7 @@ public class DemoQaTest extends BaseTest {
     @Test
     public void practiceFormTest(){
 
-        //Akt
+        Allure.step("Заполняем форму");
         registrationForm.openPage()
                 .setFirstName(data.firstName)
                 .setLastName(data.lastName)
@@ -26,7 +27,7 @@ public class DemoQaTest extends BaseTest {
                 .uploadFileFromPatch(data.filePatch)
                 .clickSumbit();
 
-        //Assert
+        Allure.step("Проверяем форму");
         registrationForm.checkResultForm()
                 .checkResultField("Student Name", data.firstName + " " + data.lastName)
                 .checkResultField("Student Email", data.email)

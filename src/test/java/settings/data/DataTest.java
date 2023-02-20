@@ -4,42 +4,61 @@ import com.github.javafaker.Faker;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class DataTest {
 
-    Faker faker = new Faker(new Locale("en"));
+    public String firstName;
+    public String lastName;
+    public String mobileNumber;
+    public String year;
+    public String month;
+    public String day;
+    public String subjects;
+    public String currentAddress;
+    public String email;
+    public String filePatch;
+    public String state;
+    public String city;
+    public String hobbies;
+    public String gender;
 
-    LocalDate date = faker.date().birthday(1,90)
-            .toInstant()
-            .atZone(ZoneId.systemDefault())
-            .toLocalDate();
+    Faker fakerRu = new Faker(new Locale("ru"));
+    Faker fakerEn = new Faker(new Locale("en"));
 
-    public String firstName = faker.name().firstName();
-    public String lastName = faker.name().lastName();
-    public String mobileNumber = String.valueOf(faker.number().numberBetween(70000000001L, 79999999999L));
-
-    public String year = String.valueOf(date.getYear());
-    public String month = date.getMonth().toString().charAt(0) +
-            date.getMonth().toString().substring(1).toLowerCase();
-    public String day = String.valueOf(date.getDayOfMonth()).replaceAll("\\^0\\d", ""
-            + Sdate.getDayOfMonth());
-
-    public String subjects = getRandomValue("Maths", "Economics", "Chemistry");
-    public String currentAddress = faker.address().fullAddress();
-    public String email = faker.internet().emailAddress();
-    public String filePatch = "avatar.jpg";
-
-    public String state = getRandomValue("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
-    public String city = getRandomCity(state);
-    public String hobbies = getRandomValue("Sports", "Reading", "Music");
-    public String gender = getRandomValue("Male", "Female", "Other");
-
-    private String getRandomValue(String... values){
-        return faker.options().option(values);
+    public DataTest() {
+        this.updateDate();
     }
 
-    private String getRandomCity(String state){
+    public void updateDate() {
+
+        LocalDate date = fakerEn.date().birthday(1, 90)
+                .toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+
+        firstName = fakerRu.name().firstName();
+        lastName = fakerRu.name().lastName();
+        mobileNumber = fakerRu.phoneNumber().subscriberNumber(10);
+        year = String.valueOf(date.getYear());
+        month = date.format(DateTimeFormatter.ofPattern("MMMM", Locale.ENGLISH));
+        day = date.format(DateTimeFormatter.ofPattern("dd", Locale.ENGLISH));
+        subjects = getRandomValue("Maths", "Economics", "Chemistry");
+        currentAddress = fakerRu.address().fullAddress();
+        email = fakerEn.internet().emailAddress();
+        filePatch = "avatar.jpg";
+        state = getRandomValue("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
+        city = getRandomCity(state);
+        hobbies = getRandomValue("Sports", "Reading", "Music");
+        gender = getRandomValue("Male", "Female", "Other");
+    }
+
+    private String getRandomValue(String... values) {
+        return fakerRu.options().option(values);
+    }
+
+    private String getRandomCity(String state) {
         return switch (state) {
             case "NCR" -> getRandomValue("Delhi", "Gurgaon", "Noida");
             case "Uttar Pradesh" -> getRandomValue("Agra", "Lucknow", "Merrut");
