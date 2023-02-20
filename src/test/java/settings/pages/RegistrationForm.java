@@ -20,7 +20,8 @@ public class RegistrationForm {
         $(".practice-form-wrapper").shouldHave(text(TITLE_TEXT));
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#close-fixedban').remove()");
-
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return this;
     }
 
