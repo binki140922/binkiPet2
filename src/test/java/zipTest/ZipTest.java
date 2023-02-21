@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ZipTest {
 
     @Test
-    public void ZipExtractTest() throws IOException, CsvException {
+    public void zipExtractTest() throws IOException, CsvException {
 
         ClassLoader classLoader = ZipTest.class.getClassLoader();
 
