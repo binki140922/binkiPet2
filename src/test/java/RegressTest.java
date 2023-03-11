@@ -1,95 +1,109 @@
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import model.LoginRequestModel;
+import model.ResponseModel;
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.Matchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
+import static specs.LoginSpec.loginRequestSpec;
+import static specs.LoginSpec.loginResponseSpec;
 
 public class RegressTest {
-
-    String BASE_UTL = "https://reqres.in/api/register";
 
     @Test
     public void ResponseSuccessTest(){
 
-        String data = "{\"email\": \"eve.holt@reqres.in\",     \"password\": \"pistol\"}";
-        RestAssured.given()
-                .log().uri()
-                .contentType(ContentType.JSON)
-                .body(data)
+        LoginRequestModel loginRequestModel = new LoginRequestModel();
+        loginRequestModel.setEmail("eve.holt@reqres.in");
+        loginRequestModel.setPassword("pistol");
+
+        ResponseModel responseModel = RestAssured.given(loginRequestSpec)
+                .body(loginRequestModel)
                 .when()
-                .post(BASE_UTL)
+                .post("/register")
                 .then()
-                .log().status()
-                .log().body()
+                .spec(loginResponseSpec)
                 .statusCode(200)
-                .body("id",is(4))
-                .body("token", is("QpwL5tke4Pnpja7X4"));
+                .extract().as(ResponseModel.class);
+
+                assertThat(responseModel.getToken()).isEqualTo("QpwL5tke4Pnpja7X4");
+                assertThat(responseModel.getId()).isEqualTo(4);
     }
 
     @Test
-    public void EmptyEmailTest(){
+    public void EmptyEmailTest() {
 
-        String data = "{\"email\": \"\",     \"password\": \"pistol\"}";
-        RestAssured.given()
-                .log().uri()
-                .contentType(ContentType.JSON)
-                .body(data)
+        LoginRequestModel loginRequestModel = new LoginRequestModel();
+        loginRequestModel.setEmail("");
+        loginRequestModel.setPassword("pistol");
+
+        ResponseModel responseModel = RestAssured.given(loginRequestSpec)
+                .body(loginRequestModel)
                 .when()
-                .post(BASE_UTL)
+                .post("/register")
                 .then()
-                .log().status()
-                .log().body()
+                .spec(loginResponseSpec)
                 .statusCode(400)
-                .body("error", is("Missing email or username"));
+                .extract().as(ResponseModel.class);
+
+        assertThat(responseModel.getError()).isEqualTo("Missing email or username");
     }
 
     @Test
     public void EmptyPasswordTest(){
 
-        String data = "{\"email\": \"eve.holt@reqres.in\",     \"password\": \"\"}";
-        RestAssured.given()
-                .log().uri()
-                .contentType(ContentType.JSON)
-                .body(data)
+        LoginRequestModel loginRequestModel = new LoginRequestModel();
+        loginRequestModel.setEmail("eve.holt@reqres.in");
+        loginRequestModel.setPassword("");
+
+        ResponseModel responseModel = RestAssured.given(loginRequestSpec)
+                .body(loginRequestModel)
                 .when()
-                .post(BASE_UTL)
+                .post("/register")
                 .then()
-                .log().status()
-                .log().body()
+                .spec(loginResponseSpec)
                 .statusCode(400)
-                .body("error", is("Missing password"));
+                .extract().as(ResponseModel.class);
+
+        assertThat(responseModel.getError()).isEqualTo("Missing password");
     }
 
     @Test
     public void LoginNotRegistrationUserTest(){
 
-        String data = "{\"email\": \"pistol\",     \"password\": \"eve.holt@reqres.in\"}";
-        RestAssured.given()
-                .log().uri()
-                .contentType(ContentType.JSON)
-                .body(data)
+        LoginRequestModel loginRequestModel = new LoginRequestModel();
+        loginRequestModel.setEmail("pistol");
+        loginRequestModel.setPassword("eve.holt@reqres.in");
+
+        ResponseModel responseModel = RestAssured.given(loginRequestSpec)
+                .body(loginRequestModel)
                 .when()
-                .post(BASE_UTL)
+                .post("/register")
                 .then()
-                .log().status()
-                .log().body()
+                .spec(loginResponseSpec)
                 .statusCode(400)
-                .body("error", is("Note: Only defined users succeed registration"));
+                .extract().as(ResponseModel.class);
+
+        assertThat(responseModel.getError()).isEqualTo("Note: Only defined users succeed registration");
     }
 
     @Test
     public void BadRequestTest(){
 
-        String data = "{\"email\": \"pistol\",     \"password\": \"eve.holt@reqres.in\"}";
-        RestAssured.given()
-                .log().uri()
-                .body(data)
+        LoginRequestModel loginRequestModel = new LoginRequestModel();
+        loginRequestModel.setEmail("eve.holt@reqres.in");
+        loginRequestModel.setPassword("pistol");
+
+        ResponseModel responseModel = RestAssured.given(loginRequestSpec)
+                .body(loginRequestModel)
+                .contentType(ContentType.TEXT)
                 .when()
-                .post(BASE_UTL)
+                .post("/register")
                 .then()
-                .log().status()
-                .log().body()
+                .spec(loginResponseSpec)
                 .statusCode(400)
-                .body("error", is("Missing email or username"));
+                .extract().as(ResponseModel.class);
+
+        assertThat(responseModel.getError()).isEqualTo("Missing email or username");
     }
 }
