@@ -32,17 +32,11 @@ dependencies {
             "org.slf4j:slf4j-simple:2.0.5",
             "org.assertj:assertj-core:3.24.2",
             "com.github.javafaker:javafaker:1.0.2",
+            "org.aeonbits.owner:owner:1.0.12",
             "io.qameta.allure:allure-selenide:2.17.3"
     )
 }
 tasks.withType(Test){
-    systemProperties(System.getProperties());
-
+    systemProperties(System.getProperties())
     useJUnitPlatform()
-}
-
-
-
-test {
-
 }

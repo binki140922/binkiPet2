@@ -44,7 +44,7 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
         }
 
         public static URL getVideoUrl() {
-            String videoUrl = System.getProperty("baseUrlVideo", "https://selenoid.autotests.cloud/video/") +
+            String videoUrl = System.getProperty("baseUrlVideo") +
                     sessionId() + ".mp4";
             try {
                 return new URL(videoUrl);
