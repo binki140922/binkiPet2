@@ -23,4 +23,18 @@ public class BrowserStackSearchTest extends BaseTest {
                         .shouldHave(CollectionCondition.sizeGreaterThan(1));
         });
     }
+
+    @Test
+    public void searchIosTest() {
+
+        //TODO: дописать логику теста, по удаленке запускается
+        Allure.step("Поиск контента", () -> {
+            Selenide.$(AppiumBy.accessibilityId("Text Button")).click();
+            Selenide.$(AppiumBy.id("Text Input")).sendKeys("hello@browserstack.com");
+        });
+        Allure.step("Проверка резултата", () -> {
+            Selenide.$$(AppiumBy.id("Text Output"))
+                    .shouldHave(CollectionCondition.exactTexts("hello@browserstack.com"));
+        });
+    }
 }

@@ -33,11 +33,11 @@ public class BaseTest {
     void closeSession(){
         String sessionId = Selenide.sessionId().toString();
 
-//        Attach.screenshotAs("Last screenshot");
-//        Attach.pageSource();
+    //    Attach.screenshotAs("Last screenshot");
+      //  Attach.pageSource();
 
         Selenide.closeWebDriver();
 
-//         Attach.addVideo(sessionId);
+        // Attach.addVideo(sessionId);
     }
 }

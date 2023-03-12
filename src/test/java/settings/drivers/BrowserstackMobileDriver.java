@@ -13,7 +13,6 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
@@ -35,7 +34,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("project", TestConfiguration.project);
         mutableCapabilities.setCapability("build", TestConfiguration.buildNumber);
         mutableCapabilities.setCapability("name", TestConfiguration.buildName);
-
 
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
