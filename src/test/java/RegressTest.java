@@ -14,7 +14,7 @@ public class RegressTest {
 
 
     @Test
-    void GroovyTest() {
+    void groovyTest() {
 
         RestAssured.given(loginRequestSpec)
                 .when()
@@ -25,7 +25,7 @@ public class RegressTest {
     }
 
     @Test
-    void Groovy2Test() {
+    void groovy2Test() {
 
         RestAssured.given(loginRequestSpec)
                 .when()
