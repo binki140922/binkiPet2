@@ -14,7 +14,7 @@ public class BrowserstackUtil {
         return RestAssured.given()
                 .log().all()
                 .filter(CustomAllureListener.withCustomTemplates())
-                .auth().basic(TestConfiguration.userName, TestConfiguration.userPassword)
+                .auth().basic(TestConfiguration.login, TestConfiguration.userPassword)
                 .when()
                 .get(url)
                 .then()

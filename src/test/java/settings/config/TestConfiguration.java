@@ -5,9 +5,10 @@ import org.aeonbits.owner.ConfigFactory;
 public class TestConfiguration {
 
     private final MobileConfig CONFIG;
-    public static String userName;
+    public static String login;
     public static String userPassword;
     public static String urlApplicationBrowserstack;
+    public static String urlBrowserstack;
     public static String device;
     public static String osVersion;
     public static String project;
@@ -20,9 +21,10 @@ public class TestConfiguration {
     }
 
     public void init(){
-        userName = CONFIG.getUserName();
         userPassword = CONFIG.getPassword();
+        login = CONFIG.getLogin();
         urlApplicationBrowserstack = CONFIG.getUrlApplicationBrowserstack();
+        urlBrowserstack = CONFIG.getUrlBrowserstack();
         device = CONFIG.getDevice();
         osVersion = CONFIG.getOsVersion();
         project = CONFIG.getProject();

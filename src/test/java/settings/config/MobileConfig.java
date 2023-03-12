@@ -2,17 +2,21 @@ package settings.config;
 
 import org.aeonbits.owner.Config;
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:local.properties"
+        "system:properties",
+        "classpath:${env}.properties"
 })
 public interface MobileConfig extends Config {
 
-    @Key("user.name")
-    String getUserName();
+    @Key("user.login")
+    String getLogin();
     @Key("user.password")
     String getPassword();
     @Key("browserstack.url.application")
     String getUrlApplicationBrowserstack();
+    @Key("browserstack.url")
+    String getUrlBrowserstack();
     @Key("setting.device")
     String getDevice();
     @Key("setting.os_version")

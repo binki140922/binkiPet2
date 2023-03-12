@@ -17,9 +17,10 @@ public class BrowserStackSearchTest extends BaseTest {
                     Selenide.$(AppiumBy.accessibilityId("Search Wikipedia")).click();
                     Selenide.$(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("java");
                 });
+
         Allure.step("Проверка резултата", () -> {
-        Selenide.$$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                .shouldHave(CollectionCondition.sizeGreaterThan(0));
+                    Selenide.$$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
+                        .shouldHave(CollectionCondition.sizeGreaterThan(1));
         });
     }
 }
