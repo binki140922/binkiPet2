@@ -9,7 +9,7 @@ public class RegressTest {
     String BASE_UTL = "https://reqres.in/api/register";
 
     @Test
-    public void ResponseSuccessTest(){
+    public void responseSuccessTest(){
 
         String data = "{\"email\": \"eve.holt@reqres.in\",     \"password\": \"pistol\"}";
         RestAssured.given()
@@ -27,7 +27,7 @@ public class RegressTest {
     }
 
     @Test
-    public void EmptyEmailTest(){
+    public void emptyEmailTest(){
 
         String data = "{\"email\": \"\",     \"password\": \"pistol\"}";
         RestAssured.given()
@@ -44,7 +44,7 @@ public class RegressTest {
     }
 
     @Test
-    public void EmptyPasswordTest(){
+    public void emptyPasswordTest(){
 
         String data = "{\"email\": \"eve.holt@reqres.in\",     \"password\": \"\"}";
         RestAssured.given()
@@ -61,7 +61,7 @@ public class RegressTest {
     }
 
     @Test
-    public void LoginNotRegistrationUserTest(){
+    public void loginNotRegistrationUserTest(){
 
         String data = "{\"email\": \"pistol\",     \"password\": \"eve.holt@reqres.in\"}";
         RestAssured.given()
@@ -78,7 +78,7 @@ public class RegressTest {
     }
 
     @Test
-    public void BadRequestTest(){
+    public void badRequestTest(){
 
         String data = "{\"email\": \"pistol\",     \"password\": \"eve.holt@reqres.in\"}";
         RestAssured.given()
