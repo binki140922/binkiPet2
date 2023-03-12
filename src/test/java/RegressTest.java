@@ -5,13 +5,38 @@ import model.ResponseModel;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.is;
 import static specs.LoginSpec.loginRequestSpec;
 import static specs.LoginSpec.loginResponseSpec;
 
 public class RegressTest {
 
+
     @Test
-    public void responseSuccessTest(){
+    void GroovyTest() {
+
+        RestAssured.given(loginRequestSpec)
+                .when()
+                .get("/users?page=2")
+                .then()
+                .statusCode(200)
+                .body("data.find{it.id == 12}.email", is("rachel.howell@reqres.in"));
+    }
+
+    @Test
+    void Groovy2Test() {
+
+        RestAssured.given(loginRequestSpec)
+                .when()
+                .get("/users?page=2")
+                .then()
+                .statusCode(200)
+                .body("data.findAll{it.email =~/.*?@reqres.in/}.email.flatten()", hasItem("michael.lawson@reqres.in"));
+    }
+
+    @Test
+    public void responseSuccessTest() {
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("eve.holt@reqres.in");
@@ -26,8 +51,8 @@ public class RegressTest {
                 .statusCode(200)
                 .extract().as(ResponseModel.class);
 
-                assertThat(responseModel.getToken()).isEqualTo("QpwL5tke4Pnpja7X4");
-                assertThat(responseModel.getId()).isEqualTo(4);
+        assertThat(responseModel.getToken()).isEqualTo("QpwL5tke4Pnpja7X4");
+        assertThat(responseModel.getId()).isEqualTo(4);
     }
 
     @Test
@@ -50,7 +75,7 @@ public class RegressTest {
     }
 
     @Test
-    public void emptyPasswordTest(){
+    public void emptyPasswordTest() {
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("eve.holt@reqres.in");
@@ -69,7 +94,7 @@ public class RegressTest {
     }
 
     @Test
-    public void loginNotRegistrationUserTest(){
+    public void loginNotRegistrationUserTest() {
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("pistol");
@@ -88,7 +113,7 @@ public class RegressTest {
     }
 
     @Test
-    public void badRequestTest(){
+    public void badRequestTest() {
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("eve.holt@reqres.in");
