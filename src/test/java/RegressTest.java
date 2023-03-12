@@ -11,7 +11,7 @@ import static specs.LoginSpec.loginResponseSpec;
 public class RegressTest {
 
     @Test
-    public void ResponseSuccessTest(){
+    public void responseSuccessTest(){
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("eve.holt@reqres.in");
@@ -31,7 +31,7 @@ public class RegressTest {
     }
 
     @Test
-    public void EmptyEmailTest() {
+    public void emptyEmailTest() {
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("");
@@ -50,7 +50,7 @@ public class RegressTest {
     }
 
     @Test
-    public void EmptyPasswordTest(){
+    public void emptyPasswordTest(){
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("eve.holt@reqres.in");
@@ -69,7 +69,7 @@ public class RegressTest {
     }
 
     @Test
-    public void LoginNotRegistrationUserTest(){
+    public void loginNotRegistrationUserTest(){
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("pistol");
@@ -88,7 +88,7 @@ public class RegressTest {
     }
 
     @Test
-    public void BadRequestTest(){
+    public void badRequestTest(){
 
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setEmail("eve.holt@reqres.in");

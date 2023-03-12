@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.with;
 public class LoginSpec {
 
     public static RequestSpecification loginRequestSpec = with()
-            .filter(new AllureRestAssured())
+            .filter(withCustomTemplates())
             .log().uri()
             .log().headers()
             .log().body()
