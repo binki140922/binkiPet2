@@ -34,7 +34,7 @@ public class BaseTest {
         String sessionId = Selenide.sessionId().toString();
 
     //    Attach.screenshotAs("Last screenshot");
-      //  Attach.pageSource();
+     //   Attach.pageSource();
 
         Selenide.closeWebDriver();
 

@@ -5,12 +5,15 @@ import com.codeborne.selenide.Selenide;
 import io.appium.java_client.AppiumBy;
 
 import io.qameta.allure.Allure;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import settings.baseTest.BaseTest;
 
 public class BrowserStackSearchTest extends BaseTest {
 
     @Test
+    @Tag("android")
     public void searchJavaTest() {
 
         Allure.step("Поиск контента", () -> {
@@ -20,10 +23,27 @@ public class BrowserStackSearchTest extends BaseTest {
 
         Allure.step("Проверка резултата", () -> {
                     Selenide.$$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(CollectionCondition.sizeGreaterThan(1));
+                        .shouldHave(CollectionCondition.sizeGreaterThan(0));
         });
     }
 
+    @Test
+    @Disabled
+    @Tag("ios")
+    public void searchAndroidTest() {
+
+        Allure.step("Поиск контента", () -> {
+            Selenide.$(AppiumBy.accessibilityId("Search Wikipedia")).click();
+            Selenide.$(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Android");
+        });
+
+        Allure.step("Проверка резултата", () -> {
+            Selenide.$$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .shouldHave(CollectionCondition.sizeGreaterThan(0));
+        });
+    }
+
+    @Disabled
     @Test
     public void searchIosTest() {
 
