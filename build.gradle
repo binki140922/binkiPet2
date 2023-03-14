@@ -55,7 +55,7 @@ task androidTest(type: Test) {
         includeTags("android")
         excludeTags ("ios")
     }
-    systemProperty "env", "android"
+    systemProperty ("env", "android")
 }
 
 task iosTest(type: Test) {
@@ -63,5 +63,5 @@ task iosTest(type: Test) {
         includeTags("ios")
         excludeTags ("android")
     }
-    systemProperty "env", "ios"
+    systemProperty ("env", "ios")
 }
