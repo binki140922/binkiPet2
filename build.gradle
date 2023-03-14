@@ -53,13 +53,15 @@ tasks.withType(Test) {
 task androidTest(type: Test) {
     useJUnitPlatform {
         includeTags("android")
-        System.setProperty("env", "android")
+        excludeTags ("ios")
     }
+    systemProperty "env", "android"
 }
 
 task iosTest(type: Test) {
     useJUnitPlatform {
         includeTags("ios")
-        System.setProperty("env", "ios")
+        excludeTags ("android")
     }
+    systemProperty "env", "ios"
 }
