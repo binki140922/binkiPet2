@@ -8,7 +8,7 @@ repositories {
 }
 
 def allureVersion = "2.19.0",
-    slf4jVersion = "2.0.5"
+    slf4jVersion = "1.7.36"
 
 allure {
     report {
@@ -22,10 +22,6 @@ allure {
             }
         }
     }
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
 }
 
 dependencies {
@@ -51,5 +47,19 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task androidTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("android")
+        System.setProperty("env", "android")
+    }
+}
+
+task iosTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("ios")
+        System.setProperty("env", "ios")
     }
 }

@@ -17,9 +17,9 @@ public interface MobileConfig extends Config {
     String getUrlApplicationBrowserstack();
     @Key("browserstack.url")
     String getUrlBrowserstack();
-    @Key("setting.device")
+    @Key("settings.device")
     String getDevice();
-    @Key("setting.os_version")
+    @Key("settings.os_version")
     String getOsVersion();
     @Key("other.project")
     String getProject();

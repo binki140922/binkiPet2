@@ -1,4 +1,4 @@
-package settings.Util;
+package settings.util;
 
 import io.restassured.RestAssured;
 import settings.config.TestConfiguration;

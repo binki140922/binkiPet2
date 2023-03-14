@@ -1,10 +1,12 @@
 package settings.helpers;
+import com.codeborne.selenide.Screenshots;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import settings.Util.BrowserstackUtil;
+import settings.util.BrowserstackUtil;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
@@ -21,6 +23,7 @@ public class Attach {
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
+
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
