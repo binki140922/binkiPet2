@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:ios.properties"
+        "classpath:${env}.properties"
 })
 public interface MobileConfig extends Config {
 
