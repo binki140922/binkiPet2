@@ -38,9 +38,11 @@ dependencies {
             "org.junit.jupiter:junit-jupiter:5.9.2",
             "org.slf4j:slf4j-simple:$slf4jVersion",
             "org.aeonbits.owner:owner:1.0.12",
-            'org.assertj:assertj-core:3.24.2'
+            "org.assertj:assertj-core:3.24.2",
+            "commons-io:commons-io:2.11.0"
     )
 }
+
 
 tasks.withType(Test) {
     systemProperties(System.getProperties())
@@ -51,21 +53,5 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
-    }
-}
-
-task androidTest(type: Test) {
-    systemProperties(System.getProperties())
-    useJUnitPlatform {
-        includeTags("android")
-        excludeTags ("ios")
-    }
-}
-
-task iosTest(type: Test) {
-    systemProperties(System.getProperties())
-    useJUnitPlatform {
-        includeTags("ios")
-        excludeTags ("android")
     }
 }

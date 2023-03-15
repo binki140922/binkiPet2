@@ -9,16 +9,27 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import settings.config.TestConfiguration;
 import settings.drivers.BrowserstackMobileDriver;
+import settings.drivers.LocalMobileDriver;
 import settings.helpers.Attach;
 
 public class BaseTest {
 
     @BeforeAll
-    static void init(){
-        TestConfiguration testConfiguration = new TestConfiguration();
+    static void init() {
+
+        String HOST = System.getProperty("deviceHost");
+
+        TestConfiguration testConfiguration = new TestConfiguration(HOST);
         testConfiguration.init();
 
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
+        if (HOST.equals("browserstack")) {
+            Configuration.browser = BrowserstackMobileDriver.class.getName();
+        } else if (HOST.equals("emulation") || HOST.equals("real")) {
+            Configuration.browser = LocalMobileDriver.class.getName();
+        } else if (HOST.equals("selenoid")) {
+            Configuration.browser = LocalMobileDriver.class.getName();
+        }
+
         Configuration.browserSize = null;
     }
 
@@ -31,7 +42,8 @@ public class BaseTest {
     }
 
     @AfterEach
-    void closeSession(){
+    void closeSession() {
+        String HOST = System.getProperty("deviceHost");
         String sessionId = Selenide.sessionId().toString();
 
 //        Attach.screenshotAs("");
@@ -39,6 +51,8 @@ public class BaseTest {
 
         Selenide.closeWebDriver();
 
-        Attach.addVideo(sessionId);
+        if (HOST.equals("browserstack") || HOST.equals("selenoid")) {
+            Attach.addVideo(sessionId);
+        }
     }
 }
