@@ -3,7 +3,7 @@ package settings.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:src/test/resources/${env}.properties"
+        "classpath:${env}.properties"
 })
 public interface MobileConfig extends Config {
 
