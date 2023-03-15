@@ -12,7 +12,7 @@ public class DemoQaTest extends BaseTest {
     @Test
     public void practiceFormTest(){
 
-        Allure.step("Заполняем форму");
+        Allure.step("Заполняем форму", ()->{
         registrationForm.openPage()
                 .setFirstName(data.firstName)
                 .setLastName(data.lastName)
@@ -26,8 +26,9 @@ public class DemoQaTest extends BaseTest {
                 .setStateAndCity(data.state, data.city)
                 .uploadFileFromPatch(data.filePatch)
                 .clickSumbit();
+        });
 
-        Allure.step("Проверяем форму");
+        Allure.step("Проверяем форму", ()->{
         registrationForm.checkResultForm()
                 .checkResultField("Student Name", data.firstName + " " + data.lastName)
                 .checkResultField("Student Email", data.email)
@@ -39,5 +40,6 @@ public class DemoQaTest extends BaseTest {
                 .checkResultField("Picture", data.filePatch)
                 .checkResultField("Address", data.currentAddress)
                 .checkResultField("State and City", data.state + " " + data.city);
+        });
     }
 }
