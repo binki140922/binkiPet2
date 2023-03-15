@@ -2,9 +2,7 @@ package settings.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "system:properties",
         "classpath:src/test/resources/${env}.properties"
 })
 public interface MobileConfig extends Config {
