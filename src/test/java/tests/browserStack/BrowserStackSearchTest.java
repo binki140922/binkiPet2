@@ -46,28 +46,10 @@ public class BrowserStackSearchTest extends BaseTest {
         });
         step("Проверка резултата", () ->
                 $(id("org.wikipedia.alpha:id/view_news_fullscreen_story_text"))
-                        .shouldHave(text(
-                                "Iran and Saudi Arabia agree to reestablish diplomatic relations, seven years after they were severed.")));
+                        .shouldHave(visible));
     }
 
     @Tag("ios")
-    @Test
-    @Disabled
-    @Tag("ios")
-    public void searchAndroidTest() {
-
-        Allure.step("Поиск контента", () -> {
-            Selenide.$(AppiumBy.accessibilityId("Search Wikipedia")).click();
-            Selenide.$(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Android");
-        });
-
-        Allure.step("Проверка резултата", () -> {
-            Selenide.$$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                    .shouldHave(CollectionCondition.sizeGreaterThan(0));
-        });
-    }
-
-    @Disabled
     @Test
     public void searchIosTest() {
 

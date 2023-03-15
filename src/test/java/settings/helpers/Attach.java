@@ -6,7 +6,6 @@ import org.openqa.selenium.TakesScreenshot;
 import settings.util.BrowserstackUtil;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Base64;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
