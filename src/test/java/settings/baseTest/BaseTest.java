@@ -15,10 +15,7 @@ public class BaseTest {
 
     @BeforeAll
     static void init(){
-        TestConfiguration testConfiguration = new TestConfiguration();
-        testConfiguration.init();
-
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
+         Configuration.browser = BrowserstackMobileDriver.class.getName();
         Configuration.browserSize = null;
     }
 

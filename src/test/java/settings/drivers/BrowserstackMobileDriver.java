@@ -16,6 +16,9 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
+        TestConfiguration testConfiguration = new TestConfiguration();
+        testConfiguration.init();
+
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
