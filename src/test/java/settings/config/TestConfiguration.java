@@ -21,14 +21,14 @@ public class TestConfiguration {
     }
 
     public void init(){
-        userPassword = CONFIG.getPassword();
-        login = CONFIG.getLogin();
-        urlApplicationBrowserstack = CONFIG.getUrlApplicationBrowserstack();
-        urlBrowserstack = CONFIG.getUrlBrowserstack();
-        device = CONFIG.getDevice();
-        osVersion = CONFIG.getOsVersion();
-        project = CONFIG.getProject();
-        buildNumber = CONFIG.getBuildNumber();
-        buildName = CONFIG.getBuildName();
+        userPassword = "45KmrPs4mGFcGWBr3rpM";
+        login = "vladimirvladimir_RjSaqZ";
+        urlApplicationBrowserstack = "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c";
+        urlBrowserstack = "http://hub.browserstack.com/wd/hub";
+        device = "Google Pixel 3";
+        osVersion = "9.0";
+        project = "First Java Project";
+        buildNumber = "browserstack-build-1";
+        buildName = "first_test";
     }
 }
