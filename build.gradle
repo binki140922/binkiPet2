@@ -45,6 +45,7 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
+    System.setProperty("env", "local")
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
@@ -56,9 +57,7 @@ tasks.withType(Test) {
     }
 }
 
-task desktopTest(type: Test) {
-    System.setProperty("env", "local")
-    systemProperties(System.getProperties())
+task remoteTest(type: Test) {
     useJUnitPlatform {
         includeTags("desktop")
     }
