@@ -25,7 +25,7 @@ public class BaseTest {
         if (ENV.equals("local")){
            LocalDriver.init();
 
-        } else {
+        } else if (ENV.equals("selenide")){
             Configuration.browser = RemoteDriver.class.getName();
         }
     }

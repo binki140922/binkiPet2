@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class RemoteDriver implements WebDriverProvider {
+public class RemoteDriver2 implements WebDriverProvider {
 
     public static URL getDesktopURL() {
         try {
@@ -28,11 +28,11 @@ public class RemoteDriver implements WebDriverProvider {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.merge(capabilities);
 
-        desiredCapabilities.setCapability("baseUrl", System.getProperty("baseUrl"));
-        desiredCapabilities.setCapability("browser", System.getProperty("browser"));
-        desiredCapabilities.setCapability("browserVersion", System.getProperty("browserVersion"));
-        desiredCapabilities.setCapability("browserSize", System.getProperty("resolution"));
-        desiredCapabilities.setCapability("remote", System.getProperty("baseUrlVideo"));
+        desiredCapabilities.setCapability("baseUrl", TestConfig.getBaseUrl());
+        desiredCapabilities.setCapability("browser", TestConfig.getBrowser());
+        desiredCapabilities.setCapability("browserVersion", TestConfig.getBrowserVersion());
+        desiredCapabilities.setCapability("browserSize", TestConfig.getBrowserSize());
+        desiredCapabilities.setCapability("remote", TestConfig.getRemote());
 
         desiredCapabilities.setCapability("enableVNC", true);
         desiredCapabilities.setCapability("enableVideo", true);
