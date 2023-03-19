@@ -9,7 +9,7 @@ import settings.baseTest.BaseTest;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
-public class BrowserStackSearchTest extends BaseTest {
+public class WikiSearchTest extends BaseTest {
 
     @Test
     public void checkGetStartedTest() {
