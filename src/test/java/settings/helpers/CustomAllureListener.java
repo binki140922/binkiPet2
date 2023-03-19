@@ -12,4 +12,3 @@ import io.qameta.allure.restassured.AllureRestAssured;
             return FILTER;
         }
     }
-}

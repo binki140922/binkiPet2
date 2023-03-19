@@ -1,20 +1,24 @@
 package settings.configs;
 
 import com.codeborne.selenide.Configuration;
+import lombok.AccessLevel;
 import lombok.Getter;
 import org.aeonbits.owner.ConfigFactory;
 
-@Getter
 public class TestConfig {
-
-    private final WebConfig CONFIG;
+    private static String BASE_URL;
 
     public TestConfig(){
-                this.CONFIG = ConfigFactory.create(WebConfig.class, System.getProperties());
+        WebConfig CONFIG = ConfigFactory.create(WebConfig.class, System.getProperties());
+                BASE_URL = CONFIG.getBaseUrl();
     }
 
     public void initConfiguration(){
-        Configuration.baseUrl = CONFIG.getBaseUrl();
+        Configuration.baseUrl = BASE_URL;
 
+    }
+
+    public static String getBaseUrl() {
+        return BASE_URL;
     }
 }

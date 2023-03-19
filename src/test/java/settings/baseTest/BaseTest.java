@@ -1,5 +1,6 @@
 package settings.baseTest;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -10,11 +11,11 @@ import settings.helpers.Attach;
 
 public class BaseTest {
 
-    TestConfig testConfig;
 
     @BeforeAll
-    public void initMethod(){
-        testConfig = new TestConfig();
+    public static void initMethod() {
+
+        TestConfig testConfig = new TestConfig();
         testConfig.initConfiguration();
     }
 
@@ -24,12 +25,13 @@ public class BaseTest {
     }
 
     @AfterEach
-    void closeSession(){
+    void closeSession() {
 
         Attach.screenshotAs("screenShot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        Selenide.closeWindow();
     }
 
 }

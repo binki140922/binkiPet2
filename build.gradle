@@ -5,8 +5,8 @@ plugins {
 }
 
 def allureVersion = "2.19.0",
-    selenideVersion = "6.11.2",
-    slf4jVersion = "2.0.5"
+    selenideVersion = "6.12.2",
+    slf4jVersion = "1.7.36"
 
 repositories {
     mavenCentral()
@@ -53,5 +53,13 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task desktopTest(type: Test) {
+    System.setProperty("env", "desktop")
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("desktop")
     }
 }
