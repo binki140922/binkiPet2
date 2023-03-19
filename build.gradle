@@ -58,6 +58,8 @@ tasks.withType(Test) {
 }
 
 task selenideTest(type: Test) {
+    System.setProperty("env", "selenide")
+    systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("desktop")
     }
