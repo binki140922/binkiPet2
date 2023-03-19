@@ -57,7 +57,7 @@ tasks.withType(Test) {
     }
 }
 
-task remoteTest(type: Test) {
+task selenideTest(type: Test) {
     useJUnitPlatform {
         includeTags("desktop")
     }
