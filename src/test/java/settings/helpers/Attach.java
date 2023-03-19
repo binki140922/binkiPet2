@@ -44,7 +44,7 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = System.getProperty("baseUrlVideo") +
+        String videoUrl = System.getProperty("setting.baseUrlVideo") +
                 sessionId() + ".mp4";
         try {
             return new URL(videoUrl);

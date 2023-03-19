@@ -17,10 +17,10 @@ public class RemoteDriver {
 
     @BeforeAll
     public static void init(){
-        Configuration.baseUrl = System.getProperty("baseUrl");
-        Configuration.browser = System.getProperty("browser");
-        Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.browserSize = System.getProperty("browserSize");
-        Configuration.remote = System.getProperty("remote");
+        Configuration.baseUrl = TestConfig.getBaseUrl();
+        Configuration.browser = TestConfig.getBrowser();
+        Configuration.browserVersion = TestConfig.getBrowserVersion();
+        Configuration.browserSize = TestConfig.getBrowserSize();
+        Configuration.remote = TestConfig.getRemote();
     }
 }
