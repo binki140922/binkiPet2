@@ -22,5 +22,7 @@ public class RemoteDriver {
         Configuration.browserVersion = TestConfig.getBrowserVersion();
         Configuration.browserSize = TestConfig.getBrowserSize();
         Configuration.remote = TestConfig.getRemote();
+        Configuration.remoteConnectionTimeout = 30000L;
+        Configuration.timeout = 8000L;
     }
 }
