@@ -57,7 +57,7 @@ tasks.withType(Test) {
 }
 
 task desktopTest(type: Test) {
-    System.setProperty("env", "desktop")
+    System.setProperty("env", "local")
     systemProperties(System.getProperties())
     useJUnitPlatform {
         includeTags("desktop")

@@ -21,5 +21,4 @@ public class MainPageDesktopTest extends BaseTest {
                 .clickHeader(data.getLinkName())
                 .checkOpenUrl(data.getLinkUrl());
     }
-
 }

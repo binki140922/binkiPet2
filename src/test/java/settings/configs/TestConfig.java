@@ -1,24 +1,32 @@
 package settings.configs;
 
-import com.codeborne.selenide.Configuration;
-import lombok.AccessLevel;
 import lombok.Getter;
+import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
 
 public class TestConfig {
-    private static String BASE_URL;
+
+    private final Config CONFIG;
+    @Getter
+    private static String baseUrl;
+    @Getter
+    private static String browser;
+    @Getter
+    private static String browserVersion;
+    @Getter
+    private static String browserSize;
+    @Getter
+    private static String remote;
 
     public TestConfig(){
-        WebConfig CONFIG = ConfigFactory.create(WebConfig.class, System.getProperties());
-                BASE_URL = CONFIG.getBaseUrl();
+        CONFIG = ConfigFactory.create(DesktopConfig.class, System.getProperties());
     }
 
     public void initConfiguration(){
-        Configuration.baseUrl = BASE_URL;
-
-    }
-
-    public static String getBaseUrl() {
-        return BASE_URL;
+        baseUrl =  ((DesktopConfig) CONFIG).getBaseUrl();
+        browser =  ((DesktopConfig) CONFIG).getBrowser();
+        browserVersion =  ((DesktopConfig) CONFIG).getBrowserVersion();
+        browserSize =  ((DesktopConfig) CONFIG).getBrowserSize();
+        remote =  ((DesktopConfig) CONFIG).getRemote();
     }
 }
