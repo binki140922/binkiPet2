@@ -33,6 +33,7 @@ public class BaseTest {
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        Selenide.open();
     }
 
     @AfterEach
