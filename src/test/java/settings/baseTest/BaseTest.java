@@ -14,10 +14,12 @@ import settings.helpers.Attach;
 
 public class BaseTest {
 
-    @BeforeAll
-    static void init() {
+    public static String HOST = System.getProperty("deviceHost");
 
-        String HOST = System.getProperty("deviceHost");
+    @BeforeAll
+    static void init() throws Exception {
+
+        System.out.println(HOST);
 
         TestConfiguration testConfiguration = new TestConfiguration(HOST);
         testConfiguration.init();
@@ -27,7 +29,8 @@ public class BaseTest {
         } else if (HOST.equals("emulation") || HOST.equals("real")) {
             Configuration.browser = LocalMobileDriver.class.getName();
         } else if (HOST.equals("selenoid")) {
-            Configuration.browser = LocalMobileDriver.class.getName();
+            System.out.println("Находится в разрботке");
+            throw new Exception("Находится в разрботке.");
         }
 
         Configuration.browserSize = null;
@@ -51,7 +54,7 @@ public class BaseTest {
 
         Selenide.closeWebDriver();
 
-        if (HOST.equals("browserstack") || HOST.equals("selenoid")) {
+        if (HOST.equals("browserstack")) {
             Attach.addVideo(sessionId);
         }
     }

@@ -55,3 +55,32 @@ tasks.withType(Test) {
         }
     }
 }
+
+task emulationTest(type: Test) {
+    System.setProperty("deviceHost", "emulation")
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("android")
+    }
+}
+task browserstackTest(type: Test) {
+    System.setProperty("deviceHost", "browserstack")
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("browserstack")
+    }
+}
+task realTest(type: Test) {
+    System.setProperty("deviceHost", "real")
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("android")
+    }
+}
+task selenoidTest(type: Test) {
+    System.setProperty("deviceHost", "selenoid")
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("android")
+    }
+}
