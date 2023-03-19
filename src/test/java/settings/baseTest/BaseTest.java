@@ -28,12 +28,12 @@ public class BaseTest {
         } else if (ENV.equals("selenide")){
             RemoteDriver.init();
         }
+        Selenide.open();
     }
 
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Selenide.open();
     }
 
     @AfterEach
@@ -42,8 +42,8 @@ public class BaseTest {
         Attach.screenshotAs("screenShot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo();
-        Selenide.closeWindow();
+        if (!ENV.equals("local")) {
+            Attach.addVideo();
+        }
     }
-
 }

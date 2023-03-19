@@ -4,6 +4,8 @@ import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import settings.configs.TestConfig;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -44,13 +46,17 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = System.getProperty("setting.baseUrlVideo") +
-                sessionId() + ".mp4";
+        String videoUrl = TestConfig.getBaseUrlVideo() +
+                Attach.getSessionId() + ".mp4";
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static String getSessionId(){
+        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 }

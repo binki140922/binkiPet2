@@ -17,6 +17,8 @@ public class TestConfig {
     private static String browserSize;
     @Getter
     private static String remote;
+    @Getter
+    private static String baseUrlVideo;
 
     public TestConfig(){
         CONFIG = ConfigFactory.create(DesktopConfig.class, System.getProperties());
@@ -28,5 +30,6 @@ public class TestConfig {
         browserVersion =  ((DesktopConfig) CONFIG).getBrowserVersion();
         browserSize =  ((DesktopConfig) CONFIG).getBrowserSize();
         remote =  ((DesktopConfig) CONFIG).getRemote();
+        baseUrlVideo =  ((DesktopConfig) CONFIG).getBaseUrlVideo();
     }
 }

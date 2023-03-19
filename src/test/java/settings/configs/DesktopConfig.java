@@ -19,4 +19,6 @@ public interface DesktopConfig extends Config {
     String getBrowserSize();
     @Key("setting.remote")
     String getRemote();
+    @Key("setting.baseUrlVideo")
+    String getBaseUrlVideo();
 }

@@ -22,7 +22,11 @@ public class RemoteDriver {
         Configuration.browserVersion = TestConfig.getBrowserVersion();
         Configuration.browserSize = TestConfig.getBrowserSize();
         Configuration.remote = TestConfig.getRemote();
-        Configuration.remoteConnectionTimeout = 30000L;
-        Configuration.timeout = 8000L;
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+
+        Configuration.browserCapabilities = capabilities;
     }
 }
