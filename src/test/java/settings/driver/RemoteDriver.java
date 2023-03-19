@@ -21,6 +21,6 @@ public class RemoteDriver {
         Configuration.browser = System.getProperty("browser");
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.browserSize = System.getProperty("browserSize");
-        Configuration.browserSize = System.getProperty("remote");
+        Configuration.remote = System.getProperty("remote");
     }
 }
