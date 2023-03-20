@@ -7,11 +7,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestUtil {
 
-    public static void checkUrlPage(String fullUrl){
+    public static void checkUrlPage(String fullUrl) {
         assertThat(WebDriverRunner.url()).isEqualTo(fullUrl);
     }
 
-    public static void openPage(String url){
+    public static void openPage(String url) {
         Selenide.open(url);
     }
 }

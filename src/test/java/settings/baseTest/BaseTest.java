@@ -1,6 +1,5 @@
 package settings.baseTest;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -22,17 +21,22 @@ public class BaseTest {
         TestConfig testConfig = new TestConfig();
         testConfig.initConfiguration();
 
-        if (ENV.equals("local")){
-           LocalDriver.init();
+        if (ENV.equals("local")) {
+            LocalDriver.init();
 
-        } else if (ENV.equals("selenide")){
+        } else if (ENV.equals("selenide")) {
             RemoteDriver.init();
         }
         Selenide.open();
     }
 
     @BeforeEach
-    void addListener() {
+    void addCookies() {
+        Selenide.clearBrowserCookies();
+    }
+
+    @BeforeEach
+    void deleteCockoies() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 

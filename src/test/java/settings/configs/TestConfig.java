@@ -20,16 +20,16 @@ public class TestConfig {
     @Getter
     private static String baseUrlVideo;
 
-    public TestConfig(){
+    public TestConfig() {
         CONFIG = ConfigFactory.create(DesktopConfig.class, System.getProperties());
     }
 
-    public void initConfiguration(){
-        baseUrl =  ((DesktopConfig) CONFIG).getBaseUrl();
-        browser =  ((DesktopConfig) CONFIG).getBrowser();
-        browserVersion =  ((DesktopConfig) CONFIG).getBrowserVersion();
-        browserSize =  ((DesktopConfig) CONFIG).getBrowserSize();
-        remote =  ((DesktopConfig) CONFIG).getRemote();
-        baseUrlVideo =  ((DesktopConfig) CONFIG).getBaseUrlVideo();
+    public void initConfiguration() {
+        baseUrl = ((DesktopConfig) CONFIG).getBaseUrl();
+        browser = ((DesktopConfig) CONFIG).getBrowser();
+        browserVersion = ((DesktopConfig) CONFIG).getBrowserVersion();
+        browserSize = ((DesktopConfig) CONFIG).getBrowserSize();
+        remote = ((DesktopConfig) CONFIG).getRemote();
+        baseUrlVideo = ((DesktopConfig) CONFIG).getBaseUrlVideo();
     }
 }

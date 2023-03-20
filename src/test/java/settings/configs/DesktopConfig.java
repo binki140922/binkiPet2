@@ -11,14 +11,19 @@ public interface DesktopConfig extends Config {
 
     @Key("setting.baseUrl")
     String getBaseUrl();
+
     @Key("setting.browser")
     String getBrowser();
+
     @Key("setting.browserVersion")
     String getBrowserVersion();
+
     @Key("setting.browserSize")
     String getBrowserSize();
+
     @Key("setting.remote")
     String getRemote();
+
     @Key("setting.baseUrlVideo")
     String getBaseUrlVideo();
 }

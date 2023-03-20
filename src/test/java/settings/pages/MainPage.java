@@ -5,8 +5,6 @@ import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import lombok.Getter;
-import lombok.Setter;
 import settings.baseTest.BaseTest;
 import settings.configs.TestConfig;
 import settings.pages.components.HeaderDesktopLayout;

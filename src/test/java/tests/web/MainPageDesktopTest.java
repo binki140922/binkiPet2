@@ -27,7 +27,7 @@ public class MainPageDesktopTest extends BaseTest {
     }
 
     @Tag("regress")
-    @DisplayName("Проверка хедера - {}")
+    @DisplayName("Проверка кнопки Альфа-Онлайн")
     @Test
     public void checkButtonAlfaOnline() {
 
@@ -37,7 +37,7 @@ public class MainPageDesktopTest extends BaseTest {
     }
 
     @Tag("regress")
-    @DisplayName("Проверка хедера - {}")
+    @DisplayName("Проверка кнопки СТАТЬ КЛИЕНТОМ")
     @Test
     public void mortgageLayoutTest() {
 
@@ -49,7 +49,7 @@ public class MainPageDesktopTest extends BaseTest {
     }
 
     @Tag("regress")
-    @DisplayName("Проверка хедера - {}")
+    @DisplayName("Проверка поисковой выдачи по запросу - ипотека")
     @Test
     public void mortgageFaindTest() {
 

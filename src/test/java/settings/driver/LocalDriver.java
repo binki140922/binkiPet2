@@ -8,7 +8,7 @@ import settings.configs.TestConfig;
 public class LocalDriver {
 
     @BeforeAll
-    public static void init(){
+    public static void init() {
         Configuration.baseUrl = TestConfig.getBaseUrl();
         Configuration.browser = TestConfig.getBrowser();
         Configuration.browserVersion = TestConfig.getBrowserVersion();
