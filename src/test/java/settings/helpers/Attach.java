@@ -45,7 +45,7 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = TestConfig.getBaseUrlVideo() +
+        String videoUrl = TestConfig.getRemoteUrlVideo() +
                 Attach.getSessionId() + ".mp4";
         try {
             return new URL(videoUrl);

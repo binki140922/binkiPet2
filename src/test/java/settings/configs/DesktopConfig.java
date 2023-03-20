@@ -24,6 +24,6 @@ public interface DesktopConfig extends Config {
     @Key("setting.remote")
     String getRemote();
 
-    @Key("setting.baseUrlVideo")
-    String getBaseUrlVideo();
+    @Key("setting.remoteUrlVideo")
+    String getRemoteUrlVideo();
 }
