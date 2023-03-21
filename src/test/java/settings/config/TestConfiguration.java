@@ -1,7 +1,10 @@
 package settings.config;
 
+import com.codeborne.selenide.Configuration;
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
+import settings.drivers.BrowserstackMobileDriver;
+import settings.drivers.LocalMobileDriver;
 
 public class TestConfiguration {
 
@@ -20,21 +23,32 @@ public class TestConfiguration {
     public static String host;
 
 
-    public TestConfiguration(String deviceHost) {
-        if (deviceHost.equals("browserstack")) {
-            this.CONFIG = ConfigFactory.create(BrowserStackMobileConfig.class, System.getProperties());
-            init();
-        } else if (deviceHost.equals("emulation") || deviceHost.equals("real")) {
-            this.CONFIG = ConfigFactory.create(MobileConfig.class, System.getProperties());
-        } else if (deviceHost.equals("selenoid")) {
-            this.CONFIG = ConfigFactory.create(SelenoidMobileConfig.class, System.getProperties());
-        } else
-            this.CONFIG = null;
+    public TestConfiguration(String deviceHost) throws Exception {
+        switch (deviceHost) {
+            case "browserstack": {
+                this.CONFIG = ConfigFactory.create(BrowserStackMobileConfig.class, System.getProperties());
+                break;
+            }
+            case "emulation": {
+            }
+            case "real": {
+                this.CONFIG = ConfigFactory.create(MobileConfig.class, System.getProperties());
+                break;
+            }
+            case "selenoid": {
+                this.CONFIG = ConfigFactory.create(SelenoidMobileConfig.class, System.getProperties());
+                break;
+            }
+            default: {
+                throw new Exception("Не верное окружение");
+            }
+        }
 
+        this.init();
 
     }
 
-    public void init() {
+    public void init() throws Exception {
         if (CONFIG instanceof BrowserStackMobileConfig) {
             userPassword = ((BrowserStackMobileConfig) CONFIG).getPassword();
             login = ((BrowserStackMobileConfig) CONFIG).getLogin();
@@ -45,6 +59,7 @@ public class TestConfiguration {
             project = ((BrowserStackMobileConfig) CONFIG).getProject();
             buildNumber = ((BrowserStackMobileConfig) CONFIG).getBuildNumber();
             buildName = ((BrowserStackMobileConfig) CONFIG).getBuildName();
+            Configuration.browser = BrowserstackMobileDriver.class.getName();
 
         } else if (CONFIG instanceof MobileConfig) {
             host = ((MobileConfig) CONFIG).getHost();
@@ -52,11 +67,10 @@ public class TestConfiguration {
             osVersion = ((MobileConfig) CONFIG).getOsVersion();
             appPackage = ((MobileConfig) CONFIG).getAppPackage();
             appActivity = ((MobileConfig) CONFIG).getAppActivity();
+            Configuration.browser = LocalMobileDriver.class.getName();
 
         } else if (CONFIG instanceof SelenoidMobileConfig) {
-
-
+            throw new Exception("Находится в разрботке.");
         }
-
     }
 }

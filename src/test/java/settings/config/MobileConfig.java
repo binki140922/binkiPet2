@@ -11,12 +11,16 @@ public interface MobileConfig extends Config {
 
     @Key("settings.host")
     String getHost();
+
     @Key("settings.device")
     String getDevice();
+
     @Key("settings.osVersion")
     String getOsVersion();
+
     @Key("settings.appPackage")
     String getAppPackage();
+
     @Key("settings.appActivity")
     String getAppActivity();
 }
