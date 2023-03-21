@@ -1,5 +1,4 @@
-# <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Проект по автоматизации тестирования веб для Альфа-Банк
-# Проект по автоматизации тестирования веб для Альфа-Банк
+# <a href="https://alfabank.ru/"><img src="/images/logos/AlfaLogo.png" width="30" height="30"  alt="IDEA"/></a> Проект по автоматизации тестирования веб для Альфа-Банк
 
 <a target="_blank" href="https://alfabank.ru/">Веб сайт Альфа-Банк</a>
 
@@ -12,7 +11,7 @@
 - [Видео прохождения тестов](#bookmark--видеозапись тестов)
 - [Allure TestOps]()
 
-## :bookmark: Технологии и инструменты
+## Технологии и инструменты
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="/images/logos/IDEA.svg" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="/images/logos/Java.svg" width="50" height="50"  alt="Java"/></a>
@@ -27,7 +26,7 @@
 <a><img src="/images/logos/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>
 </p>
 
-## :bookmark: Запуск тестов из терминала
+##  Запуск тестов из терминала
 Локальный запуск:
 ```
 gradle clean test
