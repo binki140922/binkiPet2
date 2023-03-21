@@ -16,9 +16,9 @@ public class MainPageDesktopTest extends BaseTest {
     MainPage mainPage = new MainPage();
 
     @Tags(value = {@Tag("regress"), @Tag("sanity")})
-    @DisplayName("Проверка хедера - {}")
+    @DisplayName("Проверка хедеров")
     @EnumSource(value = HeaderDLData.class, mode = EnumSource.Mode.INCLUDE)
-    @ParameterizedTest
+    @ParameterizedTest(name = "Проверка хедера - {}")
     public void checkHeaderDesktopLayout(HeaderDLData data) {
 
         mainPage.openMainPage()
