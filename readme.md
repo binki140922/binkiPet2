@@ -1,17 +1,17 @@
-# <a href="https://alfabank.ru/"><img src="/images/logos/AlfaLogo.png" width="30" height="30"  alt="IDEA"/></a> Проект по автоматизации тестирования веб для Альфа-Банк
+# <a href="https://alfabank.ru/"><img src="/images/logos/AlfaLogo.png" width="25" height="25"  alt="IDEA"/></a> Проект по автоматизации тестирования веб для Альфа-Банк
 
 <a target="_blank" href="https://alfabank.ru/">Веб сайт Альфа-Банк</a>
 
-## :card_file_box: Содержание
-- [Технологии и инструменты](#bookmark-технологии-и-инструменты)
-- [Запуск из терминала](#bookmark-запуск-тестов-из-терминала)
+## Содержание
+- [Стек технологий](#bookmark-cтек-технологий)
+- [Запуск из терминала](#запуск-тестов-из-терминала)
 - [Сборка в Jenkins](#bookmark--jenkins--job-)
-- [Allure отчет](#bookmark--отчет-в-allure-report)
+- [Allure отчеты](#bookmark--Allure-отчеты)
 - [Уведомление в Telegram](#bookmark--уведомление-в-telegram)
-- [Видео прохождения тестов](#bookmark--видеозапись тестов)
-- [Allure TestOps]()
+- [Видео прохождения тестов](#bookmark--видеозапись-тестов)
+- [Интеграция с Jira](#bookmark--Интеграция-с-Jira)
 
-## Технологии и инструменты
+## :bookmark: Стек технологий
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="/images/logos/IDEA.svg" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="/images/logos/Java.svg" width="50" height="50"  alt="Java"/></a>
@@ -22,11 +22,12 @@
 <a href="https://aerokube.com/selenoid/"><img src="/images/logos/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>
 <a href="https://github.com/allure-framework/allure2"><img src="/images/logos/Allure.svg" width="50" height="50"  alt="Allure"/></a>
 <a href="https://www.jenkins.io/"><img src="/images/logos/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
-<a><img src="/images/logos/Allure_TO.svg" width="50" height="50"  alt="Allure TestOps"/></a>
-<a><img src="/images/logos/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>
+<a href="https://qameta.io/"><img src="/images/logos/Allure_TO.svg" width="50" height="50"  alt="Allure TestOps"/></a>
+<a href="https://www.atlassian.com/software/jira/"><img src="/images/logos/Jira.svg" width="50" height="50"  alt="Jira"/></a>
+<a href="https://web.telegram.org/"><img src="/images/logos/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>
 </p>
 
-##  Запуск тестов из терминала
+## :bookmark: Запуск тестов из терминала
 Локальный запуск:
 ```
 gradle clean test
@@ -35,7 +36,7 @@ gradle clean test
 ```
 clean selenideTest
 ```
-## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/"> job </a>
+## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a><a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/"> job </a>
 
 Параметры сборки в Jenkins:
 
@@ -45,36 +46,43 @@ clean selenideTest
 - <code>REMOTE_URL</code> адрес удаленного сервера
 - <code>REMOTE_URL_VIDEO</code> адрес удаленного сервера
 
-## :bookmark: <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/4/allure/">Allure report</a>
-### Обзор сборки
+## :bookmark: <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/></a><a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/4/allure/"> отчеты</a>
+### Отчет в Allure report
+#### Основной отчет
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/overview.jpg">
 </p>
 
-### Тесты
+#### Тесты
 <p align="center">
 <img title="Allure Suites" src="/images/screens/tests.jpg">
 </p>
 
-### Графики
+### Отчет в Allure TestOps
+#### Основной отчет
 <p align="center">
-<img title="Allure Graphs" src="/images/screens/graphs.jpg">
+<img title="Allure Overview Dashboard" src="/images/screens/overview.jpg">
 </p>
 
-## :bookmark: <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/></a> Уведомление в Telegram
+#### Тесты
+<p align="center">
+<img title="Allure Suites" src="/images/screens/tests.jpg">
+</p>
+
+## :bookmark: <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/> уведомления</a>
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/telegram.jpg">
 </p>
 
-## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/></a> видеозапись тестов
+## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/> видеозапись тестов</a>
 
-### Тест #1 Проверка хедеров
+### Видео запись прохождения тестов
 <p align="center">
   <img title="Selenoid video for test4" src="/images/gif/test4.gif">
 </p>
 
-## :bookmark: <img src="/images/logos/Allure_TO.svg" width="25" height="25" alt="Allure TestOps"/></a> Интеграция с Allure TestOps
+## :bookmark: <img src="/images/logos/Allure_TO.svg" width="25" height="25" alt="Jira"/> интеграция</a>
 
 ### Allure TestOps overview
 <p align="center">
