@@ -11,7 +11,7 @@
 - [Видео прохождения тестов](#bookmark--видеозапись-тестов)
 - [Интеграция с Jira](#bookmark--Интеграция-с-Jira)
 
-## :: Стек технологий
+## :bookmark: Стек технологий
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="/images/logos/IDEA.svg" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="/images/logos/Java.svg" width="50" height="50"  alt="Java"/></a>
@@ -23,11 +23,11 @@
 <a href="https://github.com/allure-framework/allure2"><img src="/images/logos/Allure.svg" width="50" height="50"  alt="Allure"/></a>
 <a href="https://www.jenkins.io/"><img src="/images/logos/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
 <a href="https://qameta.io/"><img src="/images/logos/Allure_TO.svg" width="50" height="50"  alt="Allure TestOps"/></a>
-<a href="https://www.atlassian.com/software/jira/"><img src="/images/logos/Jira.png" width="67" height="50"  alt="Jira"/></a>
+<a href="https://www.atlassian.com/software/jira/"><img src="/images/logos/Jira.svg" width="50" height="50"  alt="Jira"/></a>
 <a href="https://web.telegram.org/"><img src="/images/logos/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>
 </p>
 
-## Запуск тестов из терминала
+## :bookmark: Запуск тестов из терминала
 Локальный запуск:
 ```
 gradle clean test
@@ -36,7 +36,7 @@ gradle clean test
 ```
 clean selenideTest
 ```
-## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a><a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/"> job </a>
+## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/>Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/"> job </a>
 
 Параметры сборки в Jenkins:
 
@@ -46,7 +46,7 @@ clean selenideTest
 - <code>REMOTE_URL</code> адрес удаленного сервера
 - <code>REMOTE_URL_VIDEO</code> адрес удаленного сервера
 
-## :bookmark: <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/></a><a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/4/allure/"> отчеты</a>
+## :bookmark: <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure" alt="Allure TestOps"/>Allure</a><a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/4/allure/"> отчеты</a>
 ### Отчет в Allure report
 #### Основной отчет
 <p align="center">
@@ -69,27 +69,28 @@ clean selenideTest
 <img title="Allure Suites" src="/images/screens/tests.jpg">
 </p>
 
-## :bookmark: <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/> уведомления</a>
+#### Пример ручных тестов
+<p align="center">
+  <img title="Allure TestOps manual tests" src="/images/screens/manual.jpg">
+</p>
+
+## :bookmark: <img src="/images/logos/Telegram.svg" width="25" height="25"  alt="Telegram"/>Telegram уведомления</a>
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/telegram.jpg">
 </p>
 
-## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/> видеозапись тестов</a>
+## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
 
 ### Видео запись прохождения тестов
 <p align="center">
   <img title="Selenoid video for test4" src="/images/gif/test4.gif">
 </p>
 
-## :bookmark: <img src="/images/logos/Allure_TO.svg" width="25" height="25" alt="Jira"/> интеграция</a>
+## :bookmark: <img src="/images/logos/Jira.svg" width="25" height="25" alt="Jira"/>Jira интеграция</a>
 
-### Allure TestOps overview
 <p align="center">
   <img title="Allure TestOps overview" src="/images/screens/testops_overview.jpg">
 </p>
 
-### Пример ручных тестов
-<p align="center">
-  <img title="Allure TestOps manual tests" src="/images/screens/manual.jpg">
-</p>
+
