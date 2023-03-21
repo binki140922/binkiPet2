@@ -4,14 +4,14 @@
 
 ## Содержание
 - [Стек технологий](#bookmark-cтек-технологий)
-- [Запуск из терминала](#запуск-тестов-из-терминала)
+- [Запуск из терминала](#bookmark--запуск-тестов-из-терминала)
 - [Сборка в Jenkins](#bookmark--jenkins--job-)
 - [Allure отчеты](#bookmark--Allure-отчеты)
 - [Уведомление в Telegram](#bookmark--уведомление-в-telegram)
 - [Видео прохождения тестов](#bookmark--видеозапись-тестов)
 - [Интеграция с Jira](#bookmark--Интеграция-с-Jira)
 
-## :bookmark: Стек технологий
+## :: Стек технологий
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="/images/logos/IDEA.svg" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="/images/logos/Java.svg" width="50" height="50"  alt="Java"/></a>
@@ -23,11 +23,11 @@
 <a href="https://github.com/allure-framework/allure2"><img src="/images/logos/Allure.svg" width="50" height="50"  alt="Allure"/></a>
 <a href="https://www.jenkins.io/"><img src="/images/logos/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
 <a href="https://qameta.io/"><img src="/images/logos/Allure_TO.svg" width="50" height="50"  alt="Allure TestOps"/></a>
-<a href="https://www.atlassian.com/software/jira/"><img src="/images/logos/Jira.svg" width="50" height="50"  alt="Jira"/></a>
+<a href="https://www.atlassian.com/software/jira/"><img src="/images/logos/Jira.png" width="67" height="50"  alt="Jira"/></a>
 <a href="https://web.telegram.org/"><img src="/images/logos/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>
 </p>
 
-## :bookmark: Запуск тестов из терминала
+## Запуск тестов из терминала
 Локальный запуск:
 ```
 gradle clean test
