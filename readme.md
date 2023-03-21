@@ -3,8 +3,8 @@
 <a target="_blank" href="https://alfabank.ru/">Веб сайт Альфа-Банк</a>
 
 ## Содержание
-- [Стек технологий](#bookmark-cтек-технологий)
-- [Запуск из терминала](#bookmark--запуск-тестов-из-терминала)
+- [Стек технологий](#bookmark--Cтек-технологий)
+- [Запуск из терминала](#bookmark--Запуск-тестов-из-терминала)
 - [Сборка в Jenkins](#bookmark--jenkins--job-)
 - [Allure отчеты](#bookmark--Allure-отчеты)
 - [Уведомление в Telegram](#bookmark--уведомление-в-telegram)
@@ -36,7 +36,7 @@ gradle clean test
 ```
 clean selenideTest
 ```
-## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/>Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/"> job </a>
+## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/>Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/"> job </a>
 
 Параметры сборки в Jenkins:
 
@@ -46,8 +46,8 @@ clean selenideTest
 - <code>REMOTE_URL</code> адрес удаленного сервера
 - <code>REMOTE_URL_VIDEO</code> адрес удаленного сервера
 
-## :bookmark: <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure" alt="Allure TestOps"/>Allure</a><a target="_blank" href="https://jenkins.autotests.cloud/job/pols-skyeng-ui/4/allure/"> отчеты</a>
-### Отчет в Allure report
+## :bookmark: Allure отчеты:
+### <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/allure/"> report</a>
 #### Основной отчет
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/overview.jpg">
@@ -58,7 +58,7 @@ clean selenideTest
 <img title="Allure Suites" src="/images/screens/tests.jpg">
 </p>
 
-### Отчет в Allure TestOps
+### <img src="/images/logos/Allure TestOps.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/19967"> TestOps</a>
 #### Основной отчет
 <p align="center">
 <img title="Allure Overview Dashboard" src="/images/screens/overview.jpg">
