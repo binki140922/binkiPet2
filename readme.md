@@ -5,7 +5,7 @@
 ## Содержание
 - [Стек технологий](#bookmark-стек-технологий)
 - [Запуск из терминала](#bookmark-Запуск-тестов-из-терминала)
-- [Сборка в Jenkins](#bookmark-job)
+- [Сборка в Jenkins](#bookmark-jenkins-job)
 - [Allure отчеты](#bookmark-Allure-отчеты)
 - [Уведомление в Telegram](#bookmark-telegram-уведомления)
 - [Интеграция с Jira](#bookmark-Jira-интеграция)
