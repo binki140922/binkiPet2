@@ -3,13 +3,13 @@
 <a target="_blank" href="https://alfabank.ru/">Веб сайт Альфа-Банк</a>
 
 ## Содержание
-- [Стек технологий](#bookmark--Cтек-технологий)
-- [Запуск из терминала](#bookmark--Запуск-тестов-из-терминала)
-- [Сборка в Jenkins](#bookmark--jenkins--job-)
-- [Allure отчеты](#bookmark--Allure-отчеты)
-- [Уведомление в Telegram](#bookmark--уведомление-в-telegram)
-- [Видео прохождения тестов](#bookmark--видеозапись-тестов)
-- [Интеграция с Jira](#bookmark--Интеграция-с-Jira)
+- [Стек технологий](#bookmark-стек-технологий)
+- [Запуск из терминала](#bookmark-Запуск-тестов-из-терминала)
+- [Сборка в Jenkins](#bookmark-jenkins--job-)
+- [Allure отчеты](#bookmark-Allure-отчеты)
+- [Уведомление в Telegram](#bookmark-уведомление-в-telegram)
+- [Видео прохождения тестов](#bookmark-видеозапись-тестов)
+- [Интеграция с Jira](#bookmark-Интеграция-с-Jira)
 
 ## :bookmark: Стек технологий
 <p align="center">
@@ -50,23 +50,23 @@ clean selenideTest
 ### <img src="/images/logos/Allure.svg" width="25" height="25"  alt="Allure"/>Отчет в Allure</a> <a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/allure/"> report</a>
 #### Основной отчет
 <p align="center">
-<img title="Allure Overview Dashboard" src="/images/screens/overview.jpg">
+<img title="Allure Overview Dashboard" src="/images/screens/overviewReport.jpg">
 </p>
 
 #### Тесты
 <p align="center">
-<img title="Allure Suites" src="/images/screens/tests.jpg">
+<img title="Allure Suites" src="/images/screens/testsReport.jpg">
 </p>
 
-### <img src="/images/logos/Allure TestOps.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/19967"> TestOps</a>
+### <img src="/images/logos/Allure_TO.svg" width="25" height="25"  alt="Allure TestOps"/>Отчет в Allure</a> <a target="_blank" href="https://allure.autotests.cloud/jobrun/19967"> TestOps</a>
 #### Основной отчет
 <p align="center">
-<img title="Allure Overview Dashboard" src="/images/screens/overview.jpg">
+<img title="Allure Overview Dashboard" src="/images/screens/overviewOps.jpg">
 </p>
 
 #### Тесты
 <p align="center">
-<img title="Allure Suites" src="/images/screens/tests.jpg">
+<img title="Allure Suites" src="/images/screens/testsOps.jpg">
 </p>
 
 #### Пример ручных тестов
@@ -84,13 +84,13 @@ clean selenideTest
 
 ### Видео запись прохождения тестов
 <p align="center">
-  <img title="Selenoid video for test4" src="/images/gif/test4.gif">
+  <img title="Selenoid video for test4" src="/images/gif/video.gif">
 </p>
 
 ## :bookmark: <img src="/images/logos/Jira.svg" width="25" height="25" alt="Jira"/>Jira интеграция</a>
 
 <p align="center">
-  <img title="Allure TestOps overview" src="/images/screens/testops_overview.jpg">
+  <img title="Allure TestOps overview" src="/images/screens/jira.jpg">
 </p>
 
 
