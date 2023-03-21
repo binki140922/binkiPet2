@@ -5,7 +5,7 @@
 ## Содержание
 - [Стек технологий](#bookmark-стек-технологий)
 - [Запуск из терминала](#bookmark-Запуск-тестов-из-терминала)
-- [Сборка в Jenkins](#bookmark-jenkins--job)
+- [Сборка в Jenkins](#bookmark-job)
 - [Allure отчеты](#bookmark-Allure-отчеты)
 - [Уведомление в Telegram](#bookmark-telegram-уведомления)
 - [Интеграция с Jira](#bookmark-Jira-интеграция)
@@ -81,14 +81,12 @@ clean selenideTest
 <img title="Allure Overview Dashboard" src="/images/screens/telegram.jpg">
 </p>
 
-## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
-
 ## :bookmark: <img src="/images/logos/Jira.svg" width="25" height="25" alt="Jira"/>Jira интеграция</a>
-
 <p align="center">
   <img title="Allure TestOps overview" src="/images/screens/jira.jpg">
 </p>
 
+## :bookmark: <img src="/images/logos/Selenoid.svg" width="25" height="25" alt="Selenoid"/>Selenoid видеозапись тестов</a>
 ### Видео запись прохождения тестов
 <p align="center">
   <img title="Selenoid video for test4" src="/images/gif/video.gif">
