@@ -22,31 +22,31 @@ public class MainPage extends BaseTest {
         return this;
     }
 
-    @Step("Нажимаем на хедер - {}")
+    @Step("Нажимаем на хедер - {0}")
     public MainPage clickHeader(String headerName) {
         headerDesktopLayout.clickHeader(headerName);
         return this;
     }
 
-    @Step("Нажимаем на элемент - {}")
+    @Step("Нажимаем на элемент - {0}")
     public MainPage findAndClickText(String nameElement) {
         Selenide.$(Selectors.byText(nameElement)).click();
         return this;
     }
 
-    @Step("Выбрать елемент у которого атрибут равен - {}")
+    @Step("Выбрать елемент у которого атрибут равен - {0}")
     public MainPage findAttributElement(String nameAttribute, String valueAttribute) {
         tmpSelenideElement = Selenide.$(Selectors.byAttribute(nameAttribute, valueAttribute));
         return this;
     }
 
-    @Step("Выбрать елемент у которого атрибут равен - {} и нажать")
+    @Step("Выбрать елемент у которого атрибут равен - {0} и нажать")
     public MainPage findAndClickAttributElement(String nameAttribute, String valueAttribute) {
         Selenide.$(Selectors.byAttribute(nameAttribute, valueAttribute)).click();
         return this;
     }
 
-    @Step("Ввести и активировать - {}")
+    @Step("Ввести и активировать - {0}")
     public MainPage setText(String text) {
         Selenide.$(tmpSelenideElement).setValue(text).pressEnter();
         return this;
@@ -62,7 +62,7 @@ public class MainPage extends BaseTest {
         Selenide.$(Selectors.byText(nameElement)).shouldBe(Condition.visible);
     }
 
-    @Step("Проверяем наличие текста {} в первом результате поиска")
+    @Step("Проверяем наличие текста - {0} в первом результате поиска")
     public void checkOneResultFaind(String text) {
         Selenide.$$(".b-serp-item__content").get(0).$(".b-serp-item__title-link")
                 .shouldBe(Condition.text(text));
