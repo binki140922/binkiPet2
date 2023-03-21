@@ -37,7 +37,7 @@ gradle clean test
 ```
 clean selenideTest
 ```
-## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/>Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/"> job </a>
+## :bookmark: <img src="/images/logos/Jenkins.svg" width="25" height="25"  alt="Jenkins"/>Jenkins</a><a target="_blank" href="https://jenkins.autotests.cloud/job/golem272_fast/"> job</a>
 
 Параметры сборки в Jenkins:
 
